@@ -1,6 +1,8 @@
 class MeetingsController < ApplicationController
   def index
-    @meetings = Meeting.where(user_id: params[:id])
+    # binding.pry
+    # @meetings = Meeting.where(user_id: params[:user_id])
+    @meetings = Meeting.find(params[:user_id])
   end
 
   def show

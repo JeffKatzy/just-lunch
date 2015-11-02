@@ -1,27 +1,33 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##TO DO
 
-Things you may want to cover:
+###User
+create
+show
+edit
+validations(presence of name, email, password)
 
-* Ruby version
+###Meeting
+show
+index
 
-* System dependencies
+###Invitation
+show
+when two invitations are accepted create two guests, meeting and restaurant.
 
-* Configuration
+###Forms
+session controller -> signup, login
+user controller -> edit, create
 
-* Database creation
+##Future Features
+Preferences (Tags)
+Comments
+Ratings
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Availability
+Time = 12
+Zipcode = 10004
 
 
 Please feel free to use a different markup language if you do not plan to run
