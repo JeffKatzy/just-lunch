@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.destory_all
+
+User.new(name: 'Austin', email: 'austin@flatiron.com', password_digest: 'austin')
+User.new(name: 'May', email: 'may@flatiron.com', password_digest: 'may')
+User.new(name: 'HoWon', email: 'howon@flatiron.com', password_digest: 'howon')
