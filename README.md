@@ -1,16 +1,14 @@
-== README
-
 ##TO DO
 
 ###User
-- create
-- show
-- edit
-- validations(presence of name, email, password)
+- new ✓
+- show ✓
+- edit ✓
+- validations(presence of name, email, password) WAIT
 
 ###Meeting
-- show
-- index
+- show 
+- index ✓
 
 ###Invitation
 - show
@@ -29,6 +27,4 @@
 - Time = 12
 - Zipcode = 10004
 
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
