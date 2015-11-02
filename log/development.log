@@ -2732,3 +2732,38 @@ Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8b
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 18:10:34 -0500
+
+
+Started GET "/users/1/meetings" for ::1 at 2015-11-02 18:12:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MeetingsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mMeeting Load (1.0ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+  Rendered meetings/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 6458ms (Views: 185.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/1/meetings" for ::1 at 2015-11-02 18:13:25 -0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mMeeting Load (0.6ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+  Rendered meetings/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7133ms (Views: 25.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/meetings" for ::1 at 2015-11-02 18:13:32 -0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mMeeting Load (0.7ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+  Rendered meetings/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1396ms (Views: 39.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/meetings" for ::1 at 2015-11-02 18:13:38 -0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mMeeting Load (0.8ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+  [1m[35mInvitation Load (0.4ms)[0m  SELECT "invitations".* FROM "invitations"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+  [1m[36mMeeting Load (0.3ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
