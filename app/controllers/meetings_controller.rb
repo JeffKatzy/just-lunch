@@ -3,7 +3,8 @@ class MeetingsController < ApplicationController
     binding.pry
     # @meetings = Meeting.where(user_id: params[:user_id])
     # @meetings = User.find(params[:user_id]).meetings
-    Meeting.joins(guests: {invitations: :users}).where(user_id: params[:user_id])
+    # Meeting.joins(guests: [{invitations: :user}]).where(user_id: params[:user_id])
+    @meetings = Meeting.select('meetings.*').joins(guests: {invitation: :user}).group('id').where(user_id = params[:id])
   end
 
   def show
