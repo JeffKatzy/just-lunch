@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :availabilities
   has_many :guests, through: :invitations
   has_many :meetings, through: :guests
-  has_many :restaurants, through: :meetings
+  has_many :restaurants, through: :invitations
 
   has_secure_password
 end
