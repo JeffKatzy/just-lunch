@@ -5,7 +5,7 @@
 - login ✓
 
 ###Profile
-- view invitation
+- view invitation ✓
 - view meetings ✓
 - logout ✓
 

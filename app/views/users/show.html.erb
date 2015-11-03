@@ -1,5 +1,7 @@
 <h2><%= @user.name %></h2>
-
+<p>
+  <%= link_to 'Invitation', user_invitation_path(@user, @user.invitations.last) %>
+</p>
 <p>
   <%= link_to 'Meetings index', user_meetings_path(@user) %>
 </p>
