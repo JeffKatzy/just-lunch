@@ -28,6 +28,7 @@
 - view ✓
 - index page - add more information (date, location, user)
 - show page - add more information (future add in of comments/ratings)
+- add image url
 
 ###Restaurants
 - Yelp API gathering information
