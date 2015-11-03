@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
+    if user && user.authenticate(password: params[:password])
       session[:user_id] = user.id
       redirect_to root_path, :notice => "Hello, #{user.name}!"
     else
