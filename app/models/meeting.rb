@@ -17,7 +17,7 @@ class Meeting < ActiveRecord::Base
   has_many :users, through: :invitations
   has_many :restaurants, through: :invitations
 
-  def get_restaurant
+  def initialize
     self.restaurant = Restaurant.search
     self.save
   end
