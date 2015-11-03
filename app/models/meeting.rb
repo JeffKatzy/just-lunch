@@ -11,6 +11,7 @@
 
 class Meeting < ActiveRecord::Base
   has_many :guests
+  belongs_to :restaurant
   has_many :invitations, through: :guests
   has_many :users, through: :invitations
   has_many :restaurants, through: :invitations
