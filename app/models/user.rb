@@ -18,4 +18,10 @@ class User < ActiveRecord::Base
   has_many :restaurants, through: :meetings
 
   has_secure_password
+
+  def self.time_filter
+    self.all.partition do |user|
+      user.availabilities.first.time
+    end
+  end
 end
