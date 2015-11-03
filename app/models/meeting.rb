@@ -16,4 +16,9 @@ class Meeting < ActiveRecord::Base
   has_many :invitations, through: :guests
   has_many :users, through: :invitations
   has_many :restaurants, through: :invitations
+
+  def get_restaurant
+    self.restaurant = Restaurant.search
+    self.save
+  end
 end
