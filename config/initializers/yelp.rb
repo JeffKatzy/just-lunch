@@ -17,6 +17,6 @@ require 'pry'
     config.token = "G5WDhVGRZARzleO0RG2Li1UrtJhfrJad"
     config.token_secret = "mr6YE3gFpRNeEQCvgcB_3e-KYfk"
   end
-  binding.pry
+  # binding.pry
 
   Yelp.client.search("new york")
