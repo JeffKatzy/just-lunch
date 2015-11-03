@@ -1,22 +1,27 @@
 ##TO DO
 
-###User
-- new ✓
-- show ✓
-- edit ✓
-- validations(presence of name, email, password) WAIT
+###Welcome
+- sign up ✓
+- login 
 
-###Meeting
-- show 
-- index ✓
+###Profile
+- view invitation
+- view meetings
+- logout
 
-###Invitation
-- show
-- when two invitations are accepted create two guests, meeting and restaurant.
+###Invitations
+- accept
+- reject
+- assign 
 
-###Forms
-- session controller -> signup, login
-- user controller -> edit, create
+###Invitation Controller
+- Same lunch
+- Same location
+- Choose two
+- Send invitations
+
+###Meetings
+- view
 
 ##Future Features
 - Preferences (Tags)
