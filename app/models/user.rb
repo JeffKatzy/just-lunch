@@ -19,9 +19,25 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  def self.time_filter
-    self.all.partition do |user|
+  private
+
+  def self.time_filter(user_array)
+    # returned a has of time as key pointing to an array of objects with that time
+    user_array.chunk do |user|
       user.availabilities.first.time
-    end
+    end.to_h.values
+  end
+
+  def self.location_filter(user_array)
+    user_array.chunk do |user|
+      user.availabilities.first.location
+    end.to_h.values
+  end
+
+  def self.apply_filters
+    time_results = self.time_filter(User.all)
+    location_results = time_results.map do |time_result|
+      self.location_filter(time_result)
+    end.flatten(1)
   end
 end
