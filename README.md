@@ -2,7 +2,7 @@
 
 ###Welcome
 - sign up ✓
-- login 
+- login ✓
 
 ###Profile
 - view invitation
