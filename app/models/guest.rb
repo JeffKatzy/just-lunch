@@ -2,11 +2,11 @@
 #
 # Table name: guests
 #
-#  id            :integer          not null, primary key
-#  invitation_id :integer
-#  meeting_id    :integer
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id         :integer          not null, primary key
+#  meeting_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Guest < ActiveRecord::Base
