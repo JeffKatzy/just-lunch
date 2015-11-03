@@ -6411,3 +6411,665 @@ Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb062
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 18:53:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 4]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 6]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mInvitation Load (1.1ms)[0m  SELECT "invitations".* FROM "invitations"
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "invitations" WHERE "invitations"."id" = $1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "invitations" WHERE "invitations"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mMeeting Load (1.1ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "meetings" WHERE "meetings"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mGuest Load (0.7ms)[0m  [1mSELECT "guests".* FROM "guests"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "guests" WHERE "guests"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "guests" WHERE "guests"."id" = $1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mRestaurant Load (0.7ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "restaurants" WHERE "restaurants"."id" = $1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Austin"], ["email", "austin@flatiron.com"], ["password_digest", "austin"], ["created_at", "2015-11-03 14:11:18.846031"], ["updated_at", "2015-11-03 14:11:18.846031"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "May"], ["email", "may@flatiron.com"], ["password_digest", "may"], ["created_at", "2015-11-03 14:11:18.848711"], ["updated_at", "2015-11-03 14:11:18.848711"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "HoWon"], ["email", "howon@flatiron.com"], ["password_digest", "howon"], ["created_at", "2015-11-03 14:11:18.850150"], ["updated_at", "2015-11-03 14:11:18.850150"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Jill"], ["email", "jill@flatiron.com"], ["password_digest", "jill"], ["created_at", "2015-11-03 14:11:18.851777"], ["updated_at", "2015-11-03 14:11:18.851777"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "invitations" ("user_id", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["status", "accepted"], ["created_at", "2015-11-03 14:11:18.870340"], ["updated_at", "2015-11-03 14:11:18.870340"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invitations" ("user_id", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 10], ["status", "accepted"], ["created_at", "2015-11-03 14:11:18.873389"], ["updated_at", "2015-11-03 14:11:18.873389"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invitations" ("user_id", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 9], ["status", "accepted"], ["created_at", "2015-11-03 14:11:18.875575"], ["updated_at", "2015-11-03 14:11:18.875575"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "invitations" ("user_id", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 10], ["status", "accepted"], ["created_at", "2015-11-03 14:11:18.877669"], ["updated_at", "2015-11-03 14:11:18.877669"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants"  ORDER BY "restaurants"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "meetings" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2015-11-03 14:11:18.880526"], ["updated_at", "2015-11-03 14:11:18.880526"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants"  ORDER BY "restaurants"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "meetings" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2015-11-03 14:11:18.883408"], ["updated_at", "2015-11-03 14:11:18.883408"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mInvitation Load (0.2ms)[0m  SELECT  "invitations".* FROM "invitations"  ORDER BY "invitations"."id" ASC LIMIT 1
+  [1m[36mMeeting Load (0.2ms)[0m  [1mSELECT  "meetings".* FROM "meetings"  ORDER BY "meetings"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "guests" ("invitation_id", "meeting_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["invitation_id", 3], ["meeting_id", 2], ["created_at", "2015-11-03 14:11:18.891234"], ["updated_at", "2015-11-03 14:11:18.891234"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mInvitation Load (0.2ms)[0m  [1mSELECT  "invitations".* FROM "invitations"  ORDER BY "invitations"."id" DESC LIMIT 1[0m
+  [1m[35mMeeting Load (0.2ms)[0m  SELECT  "meetings".* FROM "meetings"  ORDER BY "meetings"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "guests" ("invitation_id", "meeting_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["invitation_id", 6], ["meeting_id", 2], ["created_at", "2015-11-03 14:11:18.894785"], ["updated_at", "2015-11-03 14:11:18.894785"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mInvitation Load (0.2ms)[0m  SELECT "invitations".* FROM "invitations"
+  [1m[36mMeeting Load (0.2ms)[0m  [1mSELECT  "meetings".* FROM "meetings"  ORDER BY "meetings"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "guests" ("invitation_id", "meeting_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["invitation_id", 4], ["meeting_id", 3], ["created_at", "2015-11-03 14:11:18.897604"], ["updated_at", "2015-11-03 14:11:18.897604"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mInvitation Load (0.2ms)[0m  [1mSELECT "invitations".* FROM "invitations"[0m
+  [1m[35mMeeting Load (0.2ms)[0m  SELECT  "meetings".* FROM "meetings"  ORDER BY "meetings"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "guests" ("invitation_id", "meeting_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["invitation_id", 5], ["meeting_id", 3], ["created_at", "2015-11-03 14:11:18.900430"], ["updated_at", "2015-11-03 14:11:18.900430"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "restaurants" ("rating", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["rating", 3.5], ["location", "11 Broadway"], ["created_at", "2015-11-03 14:11:18.902155"], ["updated_at", "2015-11-03 14:11:18.902155"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("rating", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["rating", 4.5], ["location", "145 Broadway"], ["created_at", "2015-11-03 14:11:18.904484"], ["updated_at", "2015-11-03 14:11:18.904484"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2015-11-03 09:11:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 188ms (Views: 176.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2015-11-03 09:11:45 -0500
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/338f7821ebee560a/variables" for ::1 at 2015-11-03 09:11:45 -0500
+
+
+Started GET "/users/1" for ::1 at 2015-11-03 09:11:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 28ms (ActiveRecord: 2.6ms)
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=1:
+  activerecord (4.2.4) lib/active_record/core.rb:155:in `find'
+  app/controllers/users_controller.rb:8:in `show'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/6fc11457c89caeb3/variables" for ::1 at 2015-11-03 09:11:46 -0500
+
+
+Started POST "/__better_errors/6fc11457c89caeb3/eval" for ::1 at 2015-11-03 09:11:52 -0500
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users/7" for ::1 at 2015-11-03 09:11:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/7/meetings" for ::1 at 2015-11-03 09:11:57 -0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mMeeting Load (1.2ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+  Rendered meetings/index.html.erb within layouts/application (23.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 52ms (Views: 41.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/1" for ::1 at 2015-11-03 09:12:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=1:
+  activerecord (4.2.4) lib/active_record/core.rb:155:in `find'
+  app/controllers/users_controller.rb:8:in `show'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/f641d69d233fe578/variables" for ::1 at 2015-11-03 09:12:03 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:12:08 -0500
+  [1m[36mMeeting Load (0.2ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:12:14 -0500
+  [1m[35mMeeting Load (0.3ms)[0m  SELECT  "meetings".* FROM "meetings"  ORDER BY "meetings"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "invitations" ON "users"."id" = "invitations"."user_id" INNER JOIN "guests" ON "invitations"."id" = "guests"."invitation_id" WHERE "guests"."meeting_id" = $1[0m  [["meeting_id", 2]]
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:12:22 -0500
+  [1m[35mMeeting Load (0.4ms)[0m  SELECT  "meetings".* FROM "meetings"  ORDER BY "meetings"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "invitations" ON "users"."id" = "invitations"."user_id" INNER JOIN "guests" ON "invitations"."id" = "guests"."invitation_id" WHERE "guests"."meeting_id" = $1[0m  [["meeting_id", 3]]
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:12:53 -0500
+  [1m[35mMeeting Load (0.9ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:13:19 -0500
+  [1m[36mMeeting Load (0.7ms)[0m  [1mSELECT meetings.*, user_id FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+PG::GroupingError: ERROR:  column "invitations.user_id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: SELECT meetings.*, user_id FROM "meetings" INNER JOIN "guest...
+                           ^
+: SELECT meetings.*, user_id FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:13:30 -0500
+  [1m[35mMeeting Load (0.6ms)[0m  SELECT meetings.*, user.id FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+PG::SyntaxError: ERROR:  syntax error at or near "."
+LINE 1: SELECT meetings.*, user.id FROM "meetings" INNER JOIN "guest...
+                               ^
+: SELECT meetings.*, user.id FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:13:37 -0500
+  [1m[36mMeeting Load (0.8ms)[0m  [1mSELECT meetings.*, users.id FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+PG::GroupingError: ERROR:  column "users.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: SELECT meetings.*, users.id FROM "meetings" INNER JOIN "gues...
+                           ^
+: SELECT meetings.*, users.id FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:13:47 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:13:53 -0500
+  [1m[35mMeeting Load (0.7ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id"
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:14:15 -0500
+  [1m[36mMeeting Load (0.8ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:14:25 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:14:32 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:14:57 -0500
+  [1m[35mMeeting Load (0.8ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:15:09 -0500
+  [1m[36mMeeting Load (0.6ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:15:12 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:15:25 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:15:35 -0500
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "invitations" ON "users"."id" = "invitations"."user_id" INNER JOIN "guests" ON "invitations"."id" = "guests"."invitation_id" WHERE "guests"."meeting_id" = $1  [["meeting_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "invitations" ON "users"."id" = "invitations"."user_id" INNER JOIN "guests" ON "invitations"."id" = "guests"."invitation_id" WHERE "guests"."meeting_id" = $1[0m  [["meeting_id", 3]]
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:16:34 -0500
+  [1m[35mMeeting Load (0.8ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" WHERE (7) GROUP BY "meetings"."id"
+PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: ... ON "users"."id" = "invitations"."user_id" WHERE (7) GROUP B...
+                                                             ^
+: SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" WHERE (7) GROUP BY "meetings"."id"
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:16:42 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:16:46 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:16:52 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:17:02 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:17:08 -0500
+  [1m[36mMeeting Load (0.6ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" WHERE (7) GROUP BY "meetings"."id"[0m
+PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: ... ON "users"."id" = "invitations"."user_id" WHERE (7) GROUP B...
+                                                             ^
+: SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" WHERE (7) GROUP BY "meetings"."id"
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:17:41 -0500
+  [1m[35mMeeting Load (0.8ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 7
+PG::DatatypeMismatch: ERROR:  argument of HAVING must be type boolean, not type integer
+LINE 1: ... = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 7
+                                                                      ^
+: SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 7
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:17:50 -0500
+  [1m[36mMeeting Load (0.6ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 1[0m
+PG::DatatypeMismatch: ERROR:  argument of HAVING must be type boolean, not type integer
+LINE 1: ... = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 1
+                                                                      ^
+: SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 1
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:17:59 -0500
+  [1m[35mMeeting Load (0.6ms)[0m  SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 7
+PG::DatatypeMismatch: ERROR:  argument of HAVING must be type boolean, not type integer
+LINE 1: ... = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 7
+                                                                      ^
+: SELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id" HAVING 7
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:18:18 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:19:35 -0500
+  [1m[36mMeeting Load (0.8ms)[0m  [1mSELECT meetings.*, users.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id"[0m
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:20:44 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:20:50 -0500
+  [1m[35mMeeting Load (0.4ms)[0m  SELECT  "meetings".* FROM "meetings"  ORDER BY "meetings"."id" ASC LIMIT 1
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:20:53 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:21:02 -0500
+  [1m[36mMeeting Load (0.4ms)[0m  [1mSELECT  "meetings".* FROM "meetings"  ORDER BY "meetings"."id" ASC LIMIT 1[0m
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:21:04 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:21:06 -0500
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "invitations" ON "users"."id" = "invitations"."user_id" INNER JOIN "guests" ON "invitations"."id" = "guests"."invitation_id" WHERE "guests"."meeting_id" = $1  [["meeting_id", 2]]
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:21:42 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:21:45 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:21:49 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:22:55 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:23:00 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:23:11 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:23:15 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:24:46 -0500
+
+
+Started POST "/__better_errors/f641d69d233fe578/eval" for ::1 at 2015-11-03 09:24:53 -0500
+
+
+Started GET "/users/7" for ::1 at 2015-11-03 09:24:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 23.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/7/meetings" for ::1 at 2015-11-03 09:25:02 -0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=:
+  activerecord (4.2.4) lib/active_record/core.rb:155:in `find'
+  app/controllers/meetings_controller.rb:8:in `index'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/HoWonCheng/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/db8138ab56d5bb6d/variables" for ::1 at 2015-11-03 09:25:02 -0500
+  [1m[36mMeeting Load (0.7ms)[0m  [1mSELECT meetings.* FROM "meetings" INNER JOIN "guests" ON "guests"."meeting_id" = "meetings"."id" INNER JOIN "invitations" ON "invitations"."id" = "guests"."invitation_id" INNER JOIN "users" ON "users"."id" = "invitations"."user_id" GROUP BY "meetings"."id"[0m
+
+
+Started POST "/__better_errors/db8138ab56d5bb6d/eval" for ::1 at 2015-11-03 09:25:06 -0500
+
+
+Started POST "/__better_errors/db8138ab56d5bb6d/eval" for ::1 at 2015-11-03 09:25:16 -0500
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+
+
+Started POST "/__better_errors/db8138ab56d5bb6d/eval" for ::1 at 2015-11-03 09:25:19 -0500
+  [1m[36mMeeting Load (0.2ms)[0m  [1mSELECT "meetings".* FROM "meetings" INNER JOIN "guests" ON "meetings"."id" = "guests"."meeting_id" INNER JOIN "invitations" ON "guests"."invitation_id" = "invitations"."id" WHERE "invitations"."user_id" = $1[0m  [["user_id", 7]]
