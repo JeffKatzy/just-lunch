@@ -16,10 +16,10 @@
 - assign 
 
 ###Invitation Controller
-- Same lunch
-- Same location
-- Choose two
-- Send invitations
+- Same lunch / method (time)
+- Same location / method (location)
+- Choose two / pair people up
+- Send invitations / button on the main page
 
 ###Controller to make invitations
 - send out invitations to all users

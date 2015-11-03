@@ -4,10 +4,10 @@
 #
 #  id            :integer          not null, primary key
 #  restaurant_id :integer
-#  time          :datetime
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  status        :string
+#  time          :string
 #
 
 class Meeting < ActiveRecord::Base
