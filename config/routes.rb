@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: "logout"
   post '/sessions', to: 'sessions#create', as: "post_login"
   
+  get '/invitations', to: 'invitations#index', as: 'invitations'
+  post '/invitations', to: 'invitations#create', as: 'create_invitations'
+
   # resources :
 
   # The priority is based upon order of creation: first created -> highest priority.

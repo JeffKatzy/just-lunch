@@ -1,5 +1,9 @@
 class InvitationsController < ApplicationController
-	def show
+	def index
+    
+  end
+
+  def show
     # binding.pry
     # change to current user later if necessary
     @user = User.find(params[:user_id])
@@ -16,7 +20,8 @@ class InvitationsController < ApplicationController
 	end
 
 	def create
-
+    Invitation.create_invitations
+    redirect_to invitations_path
 	end
 
 	def destroy
