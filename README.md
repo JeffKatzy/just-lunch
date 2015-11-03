@@ -31,6 +31,12 @@
 ###Restaurants
 - Yelp API gathering information ✓
 
+###Missing Topics
+- authorization (build authorize method)
+- validate (validate presence true)
+- accept/assign or reject invitation
+- view invitations
+
 ##Future Features
 - Preferences (Tags)
 - Comments
