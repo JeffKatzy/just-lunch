@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   root 'sessions#index'
 
-  resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :restaurants, only: [:show]
-  resources :users do
+  resources :users, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :meetings, only: [:index, :show, :destroy]
+    resources :invitations, only: [:show, :new, :create, :destroy]
   end
 
   get '/signup', to: 'users#new', as: "signup"

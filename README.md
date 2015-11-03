@@ -6,8 +6,8 @@
 
 ###Profile
 - view invitation
-- view meetings
-- logout
+- view meetings ✓
+- logout ✓
 
 ###Invitations
 - accept
@@ -21,7 +21,7 @@
 - Send invitations
 
 ###Meetings
-- view
+- view ✓
 
 ##Future Features
 - Preferences (Tags)
