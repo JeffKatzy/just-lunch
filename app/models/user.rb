@@ -16,8 +16,12 @@ class User < ActiveRecord::Base
   has_many :guests
   has_many :meetings, through: :invitations
   has_many :restaurants, through: :meetings
-
+  before_save :set_time_location
   has_secure_password
+
+  def set_time_location
+    self.availabilities.build(time: "12", location:"10004") 
+  end
 
   private
 

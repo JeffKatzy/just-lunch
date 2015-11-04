@@ -8,6 +8,7 @@
 - view invitation ✓
 - view meetings ✓
 - logout ✓
+- add image
 
 ###Invitations
 - accept
@@ -37,8 +38,8 @@
 - accept/assign or reject invitation
 - view invitations
 - Fix yelp
-   - API Key
-   - Setup Adapter 
+   - API Key ✓ 
+   - Setup Adapter - using a GEM instead 
 
 ##Future Features
 - Preferences (Tags)
