@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:show]
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :meetings, only: [:index, :show, :destroy]
-    resources :invitations, only: [:show, :new, :create, :destroy, :update]
+    resources :invitations, only: [:show, :new, :create, :destroy, :update, :index]
   end
 
   get '/signup', to: 'users#new', as: "signup"

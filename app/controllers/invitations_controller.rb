@@ -1,6 +1,7 @@
 class InvitationsController < ApplicationController
 	def index
-    
+    @user = User.find(params[:user_id])
+    @invitations = @user.invitations
   end
 
   def show

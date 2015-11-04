@@ -5,7 +5,7 @@
   <% else %>
     <% if @user.meetings.last.status == "pending" %>
       Waiting on lunch partner to respond.
-    <% elsif @user.meetings.last.status == "Decline" %> %>
+    <% elsif @user.meetings.last.status == "declined" %>
       No pending invitations, please check back tomorrow.
     <% else %>
       <%= link_to "View today's lunch details.", user_meetings_path(@user, @user.meetings.last) %>
