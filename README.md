@@ -36,6 +36,9 @@
 - validate (validate presence true)
 - accept/assign or reject invitation
 - view invitations
+- Fix yelp
+   - API Key
+   - Setup Adapter 
 
 ##Future Features
 - Preferences (Tags)
