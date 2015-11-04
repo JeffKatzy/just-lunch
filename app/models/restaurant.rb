@@ -14,14 +14,13 @@
 #  postal     :string
 #  image      :string
 #
-
 class Restaurant < ActiveRecord::Base
   has_many :meetings
 
   def self.search
     restaurant = Yelp.client.search("10004", {term: 'food'}).businesses.sample(1)
     name = restaurant.first.name
-    location = restaurant.first.location.display_address
+    location = restaurant.first.location.display_address.delete'["]'
     phone = restaurant.first.phone
     food = restaurant.first.categories.flatten[0]
     url = restaurant.first.url
@@ -32,3 +31,4 @@ class Restaurant < ActiveRecord::Base
   end
 
 end
+
