@@ -22,7 +22,7 @@ class InvitationsController < ApplicationController
 
 	def create
     Invitation.create_invitations
-    redirect_to invitations_path
+    redirect_to admin_path
 	end
 
 	def destroy
@@ -32,11 +32,11 @@ class InvitationsController < ApplicationController
   def update
     invitation = Invitation.find(params[:id])
     invitation.change_status(params[:status])
-    if invitation.status == 'Decline'
-      redirect_to user_path(params[:user_id])
-    else
-      redirect_to user_meeting_path(params[:user_id], invitation.meeting_id)
-    end
+    redirect_to user_path(params[:user_id])
+  end
+
+  def admin
+
   end
 
 end
