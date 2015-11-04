@@ -21,7 +21,7 @@ class Restaurant < ActiveRecord::Base
     url = restaurant.first.url
     postal_code = restaurant.first.location.postal_code
     rating = restaurant.first.rating
-    Restaurant.create(name: name, location: location, phone: phone, food: food, url: url, postal_code: postal_code, rating:rating)
+    Restaurant.create(name: name, location: location, phone: phone, food: food, url: url, postal: postal_code, rating: rating)
   end
 
 end

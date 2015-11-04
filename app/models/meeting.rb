@@ -13,12 +13,31 @@
 class Meeting < ActiveRecord::Base
   has_many :guests
   belongs_to :restaurant
-  has_many :invitations, through: :guests
+  has_many :invitations
   has_many :users, through: :invitations
-  has_many :restaurants, through: :invitations
+  has_many :restaurants
+  before_save :get_restaruant
 
-  def initialize
+
+  # def initialize
+  #   self.restaurant = Restaurant.search
+  #   self.save
+  # end
+
+  def get_restaruant
     self.restaurant = Restaurant.search
-    self.save
+  end
+
+  def change_meeting_status(updated_invitation)
+    invitation_meetings = Meeting.all.map(&:invitations).flatten.select{|invitation| invitation.meeting == updated_invitation.meeting}
+    meeting = invitation_meetings.first.meeting
+    if invitation_meetings.find{|invitation| invitation.status == "Decline"}
+      meeting.status='declined'
+    elsif invitation_meetings.find{|invitation| invitation.status == "pending"}
+      return
+    else
+      meeting.status='accepted'
+    end
+    meeting.save
   end
 end

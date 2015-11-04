@@ -28,4 +28,14 @@ class InvitationsController < ApplicationController
 		
 	end
 
+  def update
+    invitation = Invitation.find(params[:id])
+    invitation.change_status(params[:status])
+    if invitation.status == 'Decline'
+      redirect_to user_path(params[:user_id])
+    else
+      redirect_to user_meeting_path(params[:user_id], invitation.meeting_id)
+    end
+  end
+
 end

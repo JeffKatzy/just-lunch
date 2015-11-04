@@ -1,3 +1,3 @@
 <p> <%= current_user.name %> </p>
-<%= render ( partial: 'layouts/restaurant', locals: {user: @user.restaurant }  )%>
+<%= render partial: 'layouts/restaurant', locals: {restaurant: @user.restaurants.last } %>
 <%= link_to 'View Profile', user_path(current_user) %>
