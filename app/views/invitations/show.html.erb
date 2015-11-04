@@ -1,12 +1,16 @@
 <h1>Invitation</h1>
-<p> <%= @user.name %> </p>
+<p>To: <%= @user.name %> </p>
 
 <%= render partial: 'layouts/restaurant', locals: {restaurant: @restaurant } %>
 
 <div>
-  <%= form_tag user_invitation_path(@user, @user.invitations.last), method: :patch do %>
-    <%= submit_tag 'Accept', name: :status %>
-    <%= submit_tag 'Decline', name: :status %>
+  <% if @invitation.status == 'pending' %>
+    <%= form_tag user_invitation_path(@user, @user.invitations.last), method: :patch do %>
+      <%= submit_tag 'Accept', name: :status %>
+      <%= submit_tag 'Decline', name: :status %>
+    <% end %>
+  <% else %>
+    You chosen to <%= @invitation.status.downcase %> this invitation.
   <% end %>
 </div>
 
