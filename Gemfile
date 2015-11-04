@@ -47,3 +47,5 @@ group :development do
 
 end
 gem 'annotate'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
