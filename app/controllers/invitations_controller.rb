@@ -8,6 +8,7 @@ class InvitationsController < ApplicationController
     # change to current user later if necessary
     @user = User.find(params[:user_id])
     @invitation = Invitation.find_by(id: params[:id])
+    @restaurant = @invitation.meeting.restaurant
     if @invitation
       render 'show'
     else
@@ -27,5 +28,15 @@ class InvitationsController < ApplicationController
 	def destroy
 		
 	end
+
+  def update
+    invitation = Invitation.find(params[:id])
+    invitation.change_status(params[:status])
+    if invitation.status == 'Decline'
+      redirect_to user_path(params[:user_id])
+    else
+      redirect_to user_meeting_path(params[:user_id], invitation.meeting_id)
+    end
+  end
 
 end

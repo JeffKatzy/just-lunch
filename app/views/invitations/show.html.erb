@@ -1,4 +1,13 @@
 <h1>Invitation</h1>
 <p> <%= @user.name %> </p>
- Fill in with invitation info here.(accept/reject/location/time/other user)
-<%= link_to 'View Profile', user_path(current_user) %>
+
+<%= render partial: 'layouts/restaurant', locals: {restaurant: @restaurant } %>
+
+<div>
+  <%= form_tag user_invitation_path(@user, @user.invitations.last), method: :patch do %>
+    <%= submit_tag 'Accept', name: :status %>
+    <%= submit_tag 'Decline', name: :status %>
+  <% end %>
+</div>
+
+<p><%= link_to 'View Profile', user_path(current_user) %></p>

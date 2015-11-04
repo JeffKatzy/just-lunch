@@ -14,6 +14,12 @@ class Invitation < ActiveRecord::Base
   belongs_to :user
   belongs_to :meeting
 
+  def change_status(new_status)
+    self.status = new_status
+    self.save
+    self.meeting.change_meeting_status(self)
+  end
+
   private
 
   def self.select_pairs
