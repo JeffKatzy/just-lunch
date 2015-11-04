@@ -13,6 +13,6 @@ class MeetingsController < ApplicationController
 
   def show
      @user = User.find(params[:user_id])
-     @restaruant = Meeting.find(params[:id]).restaruant
+     @restaurant = Meeting.find(params[:id]).restaurant
   end
 end

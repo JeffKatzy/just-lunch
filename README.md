@@ -11,15 +11,20 @@
 - add image
 
 ###Invitations
-- accept
-- reject (triggers other actions such as other invitation is irrelevant)
+- accept ✓
+- reject (triggers other actions such as other invitation is irrelevant) ✓
 - assign ✓
+- logic in accept/reject 
 
 ###Invitation Controller
 - Same lunch / method (time) ✓
 - Same location / method (location) ✓
 - Choose two / pair people up ✓
 - Send invitations / button on the main page ✓
+- link to restaurant is broken
+- image doesnt load (string interpolation error)
+- address is an array
+- phone format correctly
 
 ###Controller to make invitations
 - send out invitations to all users ✓
@@ -28,6 +33,7 @@
 - view ✓
 - index page - add more information (date, location, user) ✓
 - add image url ✓
+- Meeting ID should be Date & Restaurant
 
 ###Restaurants
 - Yelp API gathering information ✓
@@ -35,8 +41,8 @@
 ###Missing Topics
 - authorization (build authorize method)
 - validate (validate presence true)
-- accept/assign or reject invitation
-- view invitations
+- accept/assign or reject invitation ✓
+- view invitations ✓
 - Fix yelp
    - API Key ✓ 
    - Setup Adapter - using a GEM instead 
