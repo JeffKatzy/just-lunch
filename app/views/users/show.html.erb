@@ -3,7 +3,7 @@
   <% if @user.invitations.last.status == "pending" %>
     <%= link_to 'Pending Invitation!', user_invitation_path(@user, @user.invitations.last) %>
   <% else %>
-    No pending inviations, please check back tomorrow.
+    No pending invitations, please check back tomorrow.
   <% end %>
 </p>
 <p>
