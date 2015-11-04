@@ -7,6 +7,12 @@
 #  location   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  phone      :string
+#  name       :string
+#  food       :string
+#  url        :string
+#  postal     :string
+#  image      :string
 #
 
 class Restaurant < ActiveRecord::Base
@@ -21,7 +27,8 @@ class Restaurant < ActiveRecord::Base
     url = restaurant.first.url
     postal_code = restaurant.first.location.postal_code
     rating = restaurant.first.rating
-    Restaurant.create(name: name, location: location, phone: phone, food: food, url: url, postal_code: postal_code, rating:rating)
+    image = restaurant.first.image_url
+    Restaurant.create(name: name, location: location, phone: phone, food: food, url: url, postal_code: postal_code, rating:rating, image: image)
   end
 
 end
