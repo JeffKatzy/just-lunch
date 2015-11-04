@@ -27,7 +27,7 @@
 ###Meetings
 - view ✓
 - index page - add more information (date, location, user) ✓
-- add image url
+- add image url ✓
 
 ###Restaurants
 - Yelp API gathering information ✓
