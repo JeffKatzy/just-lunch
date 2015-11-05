@@ -2,9 +2,9 @@
 
 <% @meetings.each do |meeting| %>
 
-<p>Meeting Date: <%= link_to meeting.created_at.strftime("%B %d, %Y"), user_meeting_path(current_user, meeting) %></p>
-<p> Restaurant: <%= Restaurant.find(meeting.restaurant_id).name %>
-
+<p><%= link_to 'Meeting Date:', user_meeting_path(current_user, meeting) %> <%= meeting.created_at.strftime("%B %d, %Y")%><br>
+Restaurant: <%= Restaurant.find(meeting.restaurant_id).name %><br>
+Guest: <%= meeting.users.where.not(id: params[:user_id]).first.name%>
 </p>
 <% end %>
   
