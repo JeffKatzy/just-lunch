@@ -27,7 +27,7 @@ Fabricator(:user) do
 	email {Faker::Internet.email}
 	password { "test"}
 	password_confirmation { |attrs| attrs[:password] }
-	birthdate {"{1=> #{rand(100)+1900},2=> #{rand(1..12)}, 3=> #{rand(1..28)}}"}
+	birthdate {"{1=> #{rand(1950..1996)},2=> #{rand(1..12)}, 3=> #{rand(1..28)}}"}
 end
 #user password is always test
 10.times {Fabricate(:user)}
