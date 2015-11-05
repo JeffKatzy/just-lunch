@@ -25,6 +25,7 @@ class Invitation < ActiveRecord::Base
   def self.select_pairs
     pairs = User.apply_filters.each_with_object([]) do |filtered_group, pairs|
       while filtered_group.count > 1
+        binding.pry
         pairs << filtered_group.shuffle!.pop(2)
       end
     end
