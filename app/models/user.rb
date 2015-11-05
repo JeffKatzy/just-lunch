@@ -16,10 +16,14 @@ class User < ActiveRecord::Base
   has_many :guests
   has_many :meetings, through: :invitations
   has_many :restaurants, through: :meetings
-  before_save :set_time_location
+  before_save :set_time_location, :set_photo
   has_secure_password
   validates_presence_of :name, :email, :password_digest, :birthdate
   validates :email, uniqueness: true
+
+  def set_photo
+    self.image = "http://api.randomuser.me/portraits/med/#{["men","women"].sample}/#{rand(1..35)}.jpg"
+  end
 
   def set_time_location
     self.availabilities.build(time: "12", location:"10004") 
