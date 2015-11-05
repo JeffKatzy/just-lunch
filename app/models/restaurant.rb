@@ -20,7 +20,7 @@ class Restaurant < ActiveRecord::Base
   def self.search
     restaurant = Yelp.client.search("10004", {term: 'food'}).businesses.sample(1)
     name = restaurant.first.name
-    location = restaurant.first.location.display_address.delete'["]'
+    location = restaurant.first.location.display_address.join(', ')
     phone = restaurant.first.phone
     food = restaurant.first.categories.flatten[0]
     url = restaurant.first.url

@@ -9,6 +9,7 @@ class InvitationsController < ApplicationController
     # change to current user later if necessary
     @user = User.find(params[:user_id])
     @invitation = Invitation.find_by(id: params[:id])
+    @meeting = @invitation.meeting
     @restaurant = @invitation.meeting.restaurant
     if @invitation
       render 'show'

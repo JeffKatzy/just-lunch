@@ -1,4 +1,4 @@
-<h2><%= @user.name %></h2>
+<h2><%= @user.name.capitalize %></h2>
 <p>
   <% if @user.invitations.last.status == "pending" %>
     <%= link_to 'Pending Invitation!', user_invitation_path(@user, @user.invitations.last) %>
@@ -8,10 +8,10 @@
     <% elsif @user.meetings.last.status == "declined" %>
       No pending invitations, please check back tomorrow.
     <% else %>
-      <%= link_to "View today's lunch details.", user_meetings_path(@user, @user.meetings.last) %>
+      <%= link_to "Today's Lunch", user_meeting_path(@user, @user.meetings.last) %>
     <% end %>
   <% end %>
 </p>
 <p>
-  <%= link_to 'Meetings index', user_meetings_path(@user) %>
+  <%= link_to 'My Lunches', user_meetings_path(@user) %>
 </p>
