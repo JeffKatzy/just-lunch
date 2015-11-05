@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_many :restaurants, through: :meetings
   before_save :set_time_location
   has_secure_password
-  validates_presence_of :name, :email, :password_digest
+  validates_presence_of :name, :email, :password_digest, :birthdate
   validates :email, uniqueness: true
 
   def set_time_location
@@ -29,6 +29,13 @@ class User < ActiveRecord::Base
     accepted = self.invitations.select{|invitation| invitation.status == 'Accept'}.count
     invitations = self.invitations.count
     (accepted.to_f/invitations*100).round(2)
+  end
+
+  def age
+    date_hash = eval(self.birthdate)
+    dob = DateTime.new(date_hash[1],date_hash[2],date_hash[3]) 
+    now = Date.today
+    age = ((now - dob) / 365.25).to_i
   end
 
   private
