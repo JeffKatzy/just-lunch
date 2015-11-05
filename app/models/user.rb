@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   has_many :restaurants, through: :meetings
   before_save :set_time_location
   has_secure_password
+  validates_presence_of :name, :email, :password_digest
+  validates :email, uniqueness: true
 
   def set_time_location
     self.availabilities.build(time: "12", location:"10004") 
@@ -33,12 +35,14 @@ class User < ActiveRecord::Base
 
   def self.time_filter(user_array)
     # returned a has of time as key pointing to an array of objects with that time
+    binding.pry
     user_array.chunk do |user|
       user.availabilities.first.time
     end.to_h.values
   end
 
   def self.location_filter(user_array)
+    binding.pry
     user_array.chunk do |user|
       user.availabilities.first.location
     end.to_h.values
