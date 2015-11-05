@@ -3,6 +3,7 @@
             <div class="header-content-inner">
                 <h1>Just Lunch</h1>
                 <% if current_user %>
+                    <img src=<%= current_user.image %>>
                   <h3>Welcome back <%= current_user.name %>!</h3>
                 <% else %>
                   <h3><%=link_to "Sign Up", signup_path %> and dine today</h3>
