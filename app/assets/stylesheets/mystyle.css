@@ -1,0 +1,9 @@
+
+#headerpic img {
+	border-radius: 100%;
+	width: 40px;
+	margin: 0 auto;
+}
+img{
+	border-radius: 100%;
+}
