@@ -23,6 +23,12 @@ class User < ActiveRecord::Base
     self.availabilities.build(time: "12", location:"10004") 
   end
 
+  def accept_rate
+    accepted = self.invitations.select{|invitation| invitation.status == 'Accept'}.count
+    invitations = self.invitations.count
+    (accepted.to_f/invitations*100).round(2)
+  end
+
   private
 
   def self.time_filter(user_array)

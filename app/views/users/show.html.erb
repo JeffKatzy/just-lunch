@@ -1,14 +1,17 @@
 <h2><%= @user.name.capitalize %></h2>
 <p>
-  <% if @user.invitations.last.status == "pending" %>
-    <%= link_to 'Pending Invitation!', user_invitation_path(@user, @user.invitations.last) %>
-  <% else %>
-    <% if @user.meetings.last.status == "pending" %>
-      Waiting on lunch partner to respond.
-    <% elsif @user.meetings.last.status == "declined" %>
-      No pending invitations, please check back tomorrow.
+  <h4>Acceptance rate: <%= @user.accept_rate %>%</h4>
+  <% if @user.invitations.count > 0 %>
+    <% if @user.invitations.last.status == "pending" %>
+      <%= link_to 'Pending Invitation!', user_invitation_path(@user, @user.invitations.last) %>
     <% else %>
-      <%= link_to "Today's Lunch", user_meeting_path(@user, @user.meetings.last) %>
+      <% if @user.meetings.last.status == "pending" %>
+        Waiting on lunch partner to respond.
+      <% elsif @user.meetings.last.status == "declined" %>
+        No pending invitations, please check back tomorrow.
+      <% else %>
+        <%= link_to "Today's Lunch", user_meeting_path(@user, @user.meetings.last) %>
+      <% end %>
     <% end %>
   <% end %>
 </p>
