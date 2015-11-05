@@ -3,7 +3,13 @@
   <% if @user.invitations.last.status == "pending" %>
     <%= link_to 'Pending Invitation!', user_invitation_path(@user, @user.invitations.last) %>
   <% else %>
-    No pending invitations, please check back tomorrow.
+    <% if @user.meetings.last.status == "pending" %>
+      Waiting on lunch partner to respond.
+    <% elsif @user.meetings.last.status == "declined" %>
+      No pending invitations, please check back tomorrow.
+    <% else %>
+      <%= link_to "View today's lunch details.", user_meetings_path(@user, @user.meetings.last) %>
+    <% end %>
   <% end %>
 </p>
 <p>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [GET] "/stylesheets/app/stylesheets/creative.css"):
   actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -334,3 +335,5 @@ ActionController::RoutingError (No route matches [GET] "/stylesheets/app/stylesh
   /Users/flatironschool/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
 
 
+=======
+>>>>>>> e6fe72f5d17620a0a54bb1c1fc824fb3311aea91

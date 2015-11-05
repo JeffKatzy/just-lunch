@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:show]
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :meetings, only: [:index, :show, :destroy]
-    resources :invitations, only: [:show, :new, :create, :destroy, :update]
+    resources :invitations, only: [:show, :new, :create, :destroy, :update, :index]
   end
 
   get '/signup', to: 'users#new', as: "signup"
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: "logout"
   post '/sessions', to: 'sessions#create', as: "post_login"
   
-  get '/invitations', to: 'invitations#index', as: 'invitations'
+  # get '/invitations', to: 'invitations#index', as: 'invitations'
+  get '/admin', to: 'invitations#admin', as: 'admin'
   post '/invitations', to: 'invitations#create', as: 'create_invitations'
 
   # resources :

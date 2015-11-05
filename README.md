@@ -21,10 +21,10 @@
 - Same location / method (location) ✓
 - Choose two / pair people up ✓
 - Send invitations / button on the main page ✓
-- link to restaurant is broken
-- image doesnt load (string interpolation error)
-- address is an array
-- phone format correctly
+- link to restaurant is broken ✓
+- image doesnt load (string interpolation error) ✓
+- address is an array ✓
+- phone format correctly ✓
 
 ###Controller to make invitations
 - send out invitations to all users ✓
