@@ -12,24 +12,21 @@ Meeting.destroy_all
 Guest.destroy_all
 Restaurant.destroy_all
 
-User.create(name: 'Austin', email: 'austin@flatiron.com', password_digest: 'austin')
-User.create(name: 'May', email: 'may@flatiron.com', password_digest: 'may')
-User.create(name: 'HoWon', email: 'howon@flatiron.com', password_digest: 'howon')
-User.create(name: 'Jill', email: 'jill@flatiron.com', password_digest: 'jill')
+# User.create(name: 'Austin', email: 'austin@flatiron.com', password_digest: 'austin')
 
-Invitation.create(user: User.first, status: "accepted", restaurant: Restaurant.first)
-Invitation.create(user: User.last, status: "accepted", restaurant: Restaurant.first)
-Invitation.create(user: User.all[2], status: "accepted", restaurant: Restaurant.last)
-Invitation.create(user: User.all[3], status: "accepted", restaurant: Restaurant.last)
+# Invitation.create(user: User.first, status: "accepted", restaurant: Restaurant.first)
 
-Meeting.create(time: 12)
-Meeting.create(time: 12)
+# Meeting.create(time: 12)
 
-Guest.create(invitation: Invitation.first, meeting: Meeting.first)
-Guest.create(invitation: Invitation.last, meeting: Meeting.first)
-Guest.create(invitation: Invitation.all[1], meeting: Meeting.last)
-Guest.create(invitation: Invitation.all[2], meeting: Meeting.last)
+# Guest.create(invitation: Invitation.first, meeting: Meeting.first)
 
-Restaurant.create(rating: 3.5, location: "11 Broadway")
-Restaurant.create(rating: 4.5, location: "145 Broadway")
+# Restaurant.create(rating: 3.5, location: "11 Broadway")
 
+Fabricator(:user) do 
+	name { Faker::Name.name }
+	email {Faker::Internet.email}
+	password { "test"}
+	password_confirmation { |attrs| attrs[:password] }
+end
+#user password is always test
+300.times {Fabricate(:user)}

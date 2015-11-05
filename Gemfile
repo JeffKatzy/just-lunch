@@ -49,3 +49,5 @@ end
 gem 'annotate'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'fabrication'
+gem 'faker'
