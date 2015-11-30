@@ -26,16 +26,19 @@ class User < ActiveRecord::Base
   end
 
   def set_time_location
+    # belongs in a controller
     self.availabilities.build(time: "12", location:"10004") 
   end
 
   def accept_rate
+    # move to sql
     accepted = self.invitations.select{|invitation| invitation.status == 'Accept'}.count
     invitations = self.invitations.count
     (accepted.to_f/invitations*100).round(2)
   end
 
   def age
+    # use rails time operators to calculate
     date_hash = eval(self.birthdate)
     dob = DateTime.new(date_hash[1],date_hash[2],date_hash[3]) 
     now = Date.today
@@ -43,7 +46,7 @@ class User < ActiveRecord::Base
   end
 
   private
-
+  # These methods are impressive
   def self.sort_array_by(user_array, attribute)
     user_array.sort_by do |user|
       user.availabilities.first.send(attribute)

@@ -22,10 +22,13 @@ class Invitation < ActiveRecord::Base
 
   private
 
+# These methods belong in a service object, which you will learn about later
+# For now, would prefer they are moved to a controller
+
   def self.select_pairs
     pairs = User.apply_filters.each_with_object([]) do |filtered_group, pairs|
+      # use a higher level iterator instead of a while loop
       while filtered_group.count > 1
-        
         pairs << filtered_group.shuffle!.pop(2)
       end
     end

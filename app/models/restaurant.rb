@@ -18,6 +18,8 @@ class Restaurant < ActiveRecord::Base
   has_many :meetings
 
   def self.search
+    # this belongs in an adapter
+    # also repeating restaurant.first everywhere
     restaurant = Yelp.client.search("10004", {term: 'food'}).businesses.sample(1)
     name = restaurant.first.name
     location = restaurant.first.location.display_address.join(', ')
